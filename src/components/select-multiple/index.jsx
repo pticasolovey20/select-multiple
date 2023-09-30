@@ -40,7 +40,9 @@ const SelectMultiple = ({ isOpen, setIsOpen, selected, setSelected, error }) => 
 					style={{
 						borderBottom: selected.length > 0 && isOpen && "1px solid #b0b1b5",
 						position: "relative",
+						cursor: "pointer",
 					}}
+					onClick={handleOpen}
 				>
 					<div className={`${styles.customInput} ${isOpen || selected.length ? styles.focused : null}`}>
 						{selected.map((element, index) => (
@@ -52,7 +54,7 @@ const SelectMultiple = ({ isOpen, setIsOpen, selected, setSelected, error }) => 
 						Choose your core business
 					</span>
 
-					<DropDownTrigger isOpen={isOpen} handleOpen={handleOpen} />
+					<DropDownTrigger isOpen={isOpen} />
 				</div>
 
 				<div className={`${styles.dropdownList} ${isOpen ? styles.open : null}`}>
