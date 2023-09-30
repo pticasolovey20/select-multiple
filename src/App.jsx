@@ -3,6 +3,7 @@ import toast, { Toaster } from "react-hot-toast";
 import SelectMultiple from "./components/select-multiple";
 
 const App = () => {
+	const [isOpen, setIsOpen] = useState(false);
 	const [selected, setSelected] = useState([]);
 	const [error, setError] = useState(false);
 
@@ -15,6 +16,8 @@ const App = () => {
 		} else {
 			setError(false);
 			toast.success("Form has been submitted");
+			setSelected([]);
+			setIsOpen(false);
 		}
 	};
 
@@ -23,7 +26,13 @@ const App = () => {
 			<Toaster />
 
 			<form onSubmit={handleSubmit}>
-				<SelectMultiple selected={selected} setSelected={setSelected} error={error} setError={setError} />
+				<SelectMultiple
+					isOpen={isOpen}
+					setIsOpen={setIsOpen}
+					selected={selected}
+					setSelected={setSelected}
+					error={error}
+				/>
 
 				<button type="submit" className="submit">
 					apply now

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import DropDownTrigger from "../drop-down-trigger";
 import DropDownItem from "../drop-down-item";
 import styles from "./SelectMultiple.module.scss";
@@ -17,9 +17,7 @@ const options = [
 	{ id: 11, label: "Other" },
 ];
 
-const SelectMultiple = ({ selected, setSelected, error }) => {
-	const [isOpen, setIsOpen] = useState(false);
-
+const SelectMultiple = ({ isOpen, setIsOpen, selected, setSelected, error }) => {
 	const handleOpen = () => setIsOpen(!isOpen);
 
 	const handleSelect = (label) => {
