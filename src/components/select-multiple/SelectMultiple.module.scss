@@ -1,0 +1,100 @@
+.formRow {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+
+	p {
+		color: #101a28;
+		text-align: left;
+		padding: 0 18px;
+		margin: 0;
+	}
+
+	.dropdownContainer {
+		position: relative;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		border-radius: 8px;
+		background-color: #fff;
+
+		.customInput {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: 2px;
+
+			min-height: 30px;
+			line-height: 25px;
+
+			padding: 25px 40px 4px 18px;
+			border: none;
+			border-radius: 4px;
+
+			font-size: 16px;
+			outline: none;
+		}
+
+		.floatingSpan {
+			position: absolute;
+			left: 16px;
+			top: 30px;
+			padding: 2px;
+
+			color: #576792;
+			font-size: 18px;
+			line-height: 22px;
+
+			pointer-events: none;
+			background-color: #ffffff;
+			transition: transform 0.3s ease-in-out;
+			transform: translateY(-50%);
+		}
+
+		.customInput.focused + .floatingSpan {
+			font-size: 14px;
+			transform: translateY(-100%);
+		}
+
+		.dropdownList {
+			top: 0;
+			right: 0;
+			max-height: 0;
+			padding: 0px;
+
+			opacity: 0;
+			visibility: hidden;
+			overflow: hidden;
+
+			transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, max-height 0.5s ease-in-out;
+		}
+
+		.open {
+			opacity: 1;
+			visibility: visible;
+			max-height: 1000px;
+		}
+
+		ul {
+			display: flex;
+			flex-direction: column;
+			gap: 5px;
+
+			margin: 0;
+			padding: 0px 0px 15px 15px;
+
+			list-style: none;
+		}
+	}
+
+	.errorMessage {
+		color: #b70010;
+
+		padding: 12px 18px;
+		border-radius: 5px;
+
+		background-color: #ffdfd8;
+	}
+}
