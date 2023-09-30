@@ -32,23 +32,7 @@ form {
 	padding: 5px;
 	border-radius: 10px;
 
-	p {
-		color: #101a28;
-		text-align: left;
-
-		margin: 0;
-	}
-
-	.error {
-		color: #b70010;
-
-		padding: 12px 18px;
-		border-radius: 5px;
-
-		background-color: #ffdfd8;
-	}
-
-	button {
+	.submit {
 		width: 100%;
 		padding: 10px 20px;
 		border-radius: 5px;
